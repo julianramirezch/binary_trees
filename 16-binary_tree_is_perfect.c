@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-#include "15-binary_tree_is_full.c"
 
 /**
  * check_perfect - check if binary is perfect
@@ -12,13 +11,20 @@
 int check_perfect(const binary_tree_t *tree, int depth, int level)
 {
 	if (!tree->left && !tree->right)
-		return (level + 1);
+	{
+		if (depth == 0)
+		{
+			depth = level;
+			return (1);
+		}
+		return (depth == level);
+	}
 
 	if (!tree->left || !tree->right)
 		return (0);
 
-	return (check_perfect(tree->left, depth + 1, level) &&
-		check_perfect(tree->right, depth + 1, level));
+	return (check_perfect(tree->left, depth, level + 1) &&
+		check_perfect(tree->right, depth, level + 1));
 }
 
 
@@ -54,17 +60,19 @@ size_t binary_tree_depth(const binary_tree_t *tree)
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int level = 0, depth = 0;
+	int depth = 0;
 
 	if (!tree)
 		return (0);
 
-	if (binary_tree_is_full(tree) && binary_tree_balance(tree) == 0)
+	if (binary_tree_balance(tree) == 0)
 	{
 		depth = binary_tree_depth(tree);
-		return (check_perfect(tree, depth, level));
+		return (check_perfect(tree, depth, 0));
 	}
+
 	return (0);
+
 }
 
 /**
