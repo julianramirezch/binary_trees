@@ -2,7 +2,7 @@
 <H1 align="center"> 0x1D. C - Binary trees </H1>
 
 <p align="center">
-   <a href="https://towardsdatascience.com/5-types-of-binary-tree-with-cool-illustrations-9b335c430254"><img src="https://miro.medium.com/max/1890/1*CMGFtehu01ZEBgzHG71sMg.png" width="500" height="250"/></a>
+   <a href="https://towardsdatascience.com/5-types-of-binary-tree-with-cool-illustrations-9b335c430254"><img src="https://miro.medium.com/max/1890/1*CMGFtehu01ZEBgzHG71sMg.png" width="600" height="300"/></a>
 
 <p align="center"> 
    <b>Holberton School Bogotá D.C</b>
