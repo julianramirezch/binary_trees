@@ -9,18 +9,14 @@
                 
 ----
 <H3> General </H3>
-   
-    What’s a database
-    What’s a relational database
-    What does SQL stand for
-    What’s MySQL
-    How to create a database in MySQL
-    What does DDL and DML stand for
-    How to CREATE or ALTER a table
-    How to SELECT data from a table
-    How to INSERT, UPDATE or DELETE data
-    What are subqueries
-    How to use MySQL functions
+
+    What is a binary tree
+    What is the difference between a binary tree and a Binary Search Tree
+    What is the possible gain in terms of time complexity compared to linked lists
+    What are the depth, the height, the size of a binary tree
+    What are the different traversal methods to go through a binary tree
+    What is a complete, a full, a perfect, a balanced binary tree
+
 
 
 ### Tasks:
