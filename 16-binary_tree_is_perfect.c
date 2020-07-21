@@ -17,8 +17,8 @@ int check_perfect(const binary_tree_t *tree, int depth, int level)
 	if (!tree->left || !tree->right)
 		return (0);
 
-	return (check_perfect(tree->left, depth, level + 1) &&
-		check_perfect(tree->right, depth, level + 1));
+	return (check_perfect(tree->left, depth + 1, level) &&
+		check_perfect(tree->right, depth + 1, level));
 }
 
 
