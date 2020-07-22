@@ -33,6 +33,14 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 			return (first_copy->parent);
 	}
 
+	if (depth_a == depth_b + 1)
+	{
+		if (first_copy->parent == second_copy)
+			return (second_copy);
+		if (first_copy->parent->parent == second_copy->parent)
+			return (second_copy->parent);
+	}
+
 	return (NULL);
 }
 
