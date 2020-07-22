@@ -24,6 +24,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 			return (first_copy);
 		if (first_copy == second_copy->parent)
 			return (first_copy);
+		if (second_copy == first_copy->parent)
+			return (second_copy);
 		if (first_copy->parent == second_copy->parent->parent)
 			return (first_copy->parent);
 		first_copy = first_copy->parent;
