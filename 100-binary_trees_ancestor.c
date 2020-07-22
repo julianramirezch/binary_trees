@@ -20,28 +20,17 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	depth_b = binary_tree_depth((binary_tree_t *)second);
 
 	if (depth_a == depth_b)
-		return (first->parent);
+		return ((binary_tree_t *)first->parent);
 
 	first_copy = (binary_tree_t *)first;
 	second_copy = (binary_tree_t *)second;
 
-	while (depth_a > depth_b)
+	if (depth_b == depth_a + 1)
 	{
-		first_copy = first_copy->parent;
-		depth_a--;
-	}
-	while (depth_b > depth_a)
-	{
-		second_copy = second_copy->parent;
-		depth_b--;
-	}
-
-	while (first_copy && second_copy)
-	{
-		if (first_copy == second_copy)
+		if (second_copy->parent == first_copy)
 			return (first_copy);
-		first_copy = first_copy->parent;
-		second_copy = second_copy->parent;
+		if (second_copy->parent->parent == first_copy->parent)
+			return (first_copy->parent);
 	}
 
 	return (NULL);
