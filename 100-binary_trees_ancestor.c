@@ -10,7 +10,6 @@
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 					const binary_tree_t *second)
 {
-	int depth_a, depth_b;
 	binary_tree_t *first_copy, *second_copy;
 
 	if (!first || !second)
@@ -23,6 +22,10 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	{
 		if (first_copy == second_copy)
 			return (first_copy);
+		if (first_copy == second_copy->parent)
+			return (first_copy);
+		if (first_copy->parent == second_copy->parent->parent)
+			return (first_copy->parent);
 		first_copy = first_copy->parent;
 		second_copy = second_copy->parent;
 	}
